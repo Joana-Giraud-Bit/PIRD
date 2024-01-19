@@ -5,6 +5,7 @@ The 'Code' folder includes the scripts used for the research. Each script is acc
 To guide you through my work, I've organized the code in a specific order: 
 
 1- Average Domestic Hot Water (DHW) and electrical analysis per day per Rive De Gier.py associated with the Average_DHW_and_electrical_analysis_per_day_per_Rive_De_Gier.ipynb
+
 1bis- Average Domestic Hot Water (DHW) and electrical analysis per day per Villefontaine.py associated with the Average_DHW_and_electrical_analysis_per_day_per_Villefontaine.ipynb
 
 2-Data_Visualization_For_One_Apartment
