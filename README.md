@@ -6,8 +6,11 @@ To guide you through my work, I've organized the code in a specific order:
 
 1- Average Domestic Hot Water (DHW) and electrical analysis per day per Rive De Gier.py associated with the Average_DHW_and_electrical_analysis_per_day_per_Rive_De_Gier.ipynb
 1bis- Average Domestic Hot Water (DHW) and electrical analysis per day per Villefontaine.py associated with the Average_DHW_and_electrical_analysis_per_day_per_Villefontaine.ipynb
+
 2-Data_Visualization_For_One_Apartment
+
 3-Correlation analysis between the apartments
+
 4-Correlation analysis of apartment to themselves
 
 There are two versions of the first code, labeled as '1' and '1bis', these versions are essentially identifical but based on different datasets corresponding to different cities. The purpose of having two versions of Code 1 was to study each city and its values independantly, without being influenced by the other.
