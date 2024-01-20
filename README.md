@@ -1,11 +1,16 @@
 # PIRD
-This Github repository is associated with a research project focused on predicting the electrical consumption of domestic hot water using a statistical model.  
+This Github repository is associated with a research project focused on predicting the electrical consumption of domestic hot water using a statistical model. The primary objective is to efficiently store and manage renewable energy for meeting the daily energy needs of buildings. Accurate prediction of a building's energy consumption is essential to aligning it with energy production. The focus of this study os on predicting the electrical energy required for heating domestic hot water, which constitutes a significant portion (7.5-40%) of overall energy consumption according to the International Energy Agency. Reliable predictions can reduce environmental impact by enabling the reliance on renewable energy production.  
+However to store energy for heating domestic hot water, a solution involves using a tank that receives solar panel-generated hot water. The challenge is to determining the number of tanks needed, considering whether a signle tank is sufficient for one apartment or should serve a group. Furthermore, we also want to determine the quantity of water required for consistent hot water supply. Calculating the average consumption of apartments provides an indicator for the accumulated amount needed. As solar panel-generated energy is intermittent, determining the required accumulation allows storing enough water during periods of solar availability. The goal is then to identify a timeframe with consistent consumptions patterns, facilitating the sizing of a tank associated with the necessary water volume.  
+
+In order to address these questions, we conducted the following research and developed corresponding code.  
+
+First of all, you will come across several folders on this Github repository. The next section provide detailed descriptions of each folder and its contents.  
 
 The `Data` folder contains CSV files with measurements spanning two years, and detailed explanations about the data can be found within that folder.  
 The `Code` folder includes the scripts used for the research. Each script is accompanied by a corresponding Jupyter notebook in the `Jupyter Notebook` folder.  
-These notebooks provide comprehensive explanations for each line of code, highlight the libraries employed, and offer insights into the rationale behind the coding decisions made during the course of the project.
+These notebooks provide comprehensive explanations for each line of code, highlight the libraries employed, and offer insights into the rationale behind the coding decisions made during the course of the project.  
 
-To guide you through my work, I've organized the code in a specific order: 
+To guide you through our work, we've organized the code in a specific order: 
 
 1- `Average Domestic Hot Water (DHW) and electrical analysis per day per Rive De Gier.py` associated with the `Average_DHW_and_electrical_analysis_per_day_per_Rive_De_Gier.ipynb`
 
