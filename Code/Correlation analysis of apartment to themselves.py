@@ -97,12 +97,12 @@ print(df_910_corr)
 df11=df9.resample('H').mean()
 df12=df10.resample('H').mean()
 
-print(df11)
-print(df12)
+print(df11.shape)
+print(df12.shape)
 
 df12=df12.drop('2021-01-30 13:00:00')
 
-print(df4)
+print(df2.shape)
 
 df_1112_corr =df11.corrwith(df12.set_axis(df11.index, axis='index', copy=False)) # Correlation matrice of df1h with df2 changing the index name with the index name of dh1 to compare them
 print(df_1112_corr)
@@ -119,7 +119,7 @@ print(df13)
 df_1415_corr =df13.corrwith(df14.set_axis(df13.index, axis='index', copy=False)) # Correlation matrice of df1h with df2 changing the index name with the index name of dh1 to compare them
 print(df_1415_corr)
 
-# Comparing two dataframe of six months
+# Comparing two dataframe of three months
 
 df15=df['2020-12-01 00:00:00' : '2021-02-28 00:00:00']
 df16=df['2021-03-01 00:00:00' : '2021-05-28 04:00:00']
