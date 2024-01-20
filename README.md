@@ -23,7 +23,7 @@ Code 2 assists us in visualizing the domestic hot water consumption and electric
 
 Code 3 elaborates on our initial hypothesis, aiming to establish correlations between different apartments. To review the findings and discussions, please refer to the section d.iii titled "Correlation analysis of the apartment together as a time series", d.iv titled "Correlation analysis of the apartments together using each apartment's hourly average of a ten-day period" and d.v titled "Correlation analysis of the apartment together using a three-hours average of a ten-day period" in the PDF named `Prediction of electrical consumption of domestic hot water based on statistical model`.
 
-The final Code addresses our second hypothesis, exploring correlations whithin individual apartments. To review the findings and discussions, please refer to the section d.vi titled "Correlation analysis of the apartments and their mean with themselves" in the PDF named `Prediction of electrical consumption of domestic hot water based on statistical model`.
+The final Code addresses our second hypothesis, exploring correlations whithin individual apartments. To review the findings and discussions, please refer to the section d.vi titled "Correlation analysis of the apartments and their average with themselves" in the PDF named `Prediction of electrical consumption of domestic hot water based on statistical model`.
 
 
 
