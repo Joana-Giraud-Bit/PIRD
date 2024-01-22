@@ -6,6 +6,6 @@ The nomenclature for each CSV file follows this structure; "number_suffixe code.
 
 ## Explaination of the folders
 Within the main folder, there are two subfolders, each housing files associated with the respective city. The main folder, named "Data", contains all the CSV files, while the subfolders contain their corresponding city-associated CSV files.  
-This duplication of information was due to maintain data integrity in specific code sections, such as `Average Domestic Hot Water (DHW) and electrical analysis per day per Rive de Gier` and `Average Domestic Hot Water (DHW) and electrical analysis per day per Villefontaine`. This separation ensures that the visualization and analysis for one city is not influenced by potential NaN values from the other city.  
+This duplication of information was due to maintain data integrity in specific code sections, such as `Average Domestic Hot Water (DHW) and electrical analysis per day per Rive de Gier` and `Average Domestic Hot Water (DHW) and electrical analysis per day per Villefontaine`. This separation ensures that the visualization and analysis for one city is not influenced by potential NaN values from the other city as we remove them in the Code.  
 
 But, the main folder retains all the data as the overarching study containing all apartments. Centralizing all data in one folder simplifies the data analysis process.
