@@ -31,9 +31,15 @@ df = df[~df.isnull().any(axis=1)]  # remove the row with NaN value
 df=df*3600
 #print(df)
 
+#Normalization of the data
+df_mean = df.mean()
+df_std=df.std()
+dfn=(df-df_mean)/df_std #Called dfn because it is the global dataframe will all the data and n for normalization
+print(dfn)
+
 #Time-series analysis
 
-df1=df['2020-12-07 00:00:00' : '2020-12-12 00:00:00']
+df1=dfn['2020-12-07 00:00:00' : '2020-12-12 00:00:00']
 #print(df1)
 df1h = df1.resample("H").mean() 
 
@@ -42,14 +48,14 @@ sn.heatmap(df1h_corr, annot=True, vmax=1, vmin=-1, center=0, cmap='vlag', fmt='.
 plt.title('DHW correlation from 07/12 ~ 12/12/2020', fontsize=15) #Add a title to the figure
 plt.show() #Plot the figure
 
-df2=df['2020-12-07 00:00:00' : '2020-12-13 00:00:00']
+df2=dfn['2020-12-07 00:00:00' : '2020-12-13 00:00:00']
 df2h = df2.resample("H").mean() 
 df2h_corr = df2h.corr()
 sn.heatmap(df2h_corr, annot=True, vmax=1, vmin=-1, center=0, cmap='vlag', fmt='.2f')
 plt.title('DHW consumption correlation from 07/12 ~ 13/12/2020', fontsize=15)
 plt.show()
 
-df3=df['2021-06-06 00:00:00' : '2021-06-11 00:00:00']
+df3=dfn['2021-06-06 00:00:00' : '2021-06-11 00:00:00']
 df3h = df3.resample("H").mean() 
 df3h_corr = df3h.corr()
 sn.heatmap(df3h_corr, annot=True, vmax=1, vmin=-1, center=0, cmap='vlag', fmt='.2f')
@@ -126,12 +132,17 @@ plt.ylabel('DHW [l/h]')
 plt.title('Range of DHW of the apartments from 07/12 ~ 17/12/2020')
 plt.show()
 
-df4h_corr = df4h.corr()
+
+df4_bis=dfn['2020-12-07 00:00:00' : '2020-12-17 00:00:00']
+df4h_bis = df4_bis.resample("H").mean()
+df4h_bis = df4h_bis.groupby(df4h_bis.index.time).mean() #Get the mean values of the ten days to get an average on one day
+#print(df4h)
+df4h_corr = df4h_bis.corr()
 sn.heatmap(df4h_corr, annot=True, vmax=1, vmin=-1, center=0, cmap='vlag', fmt='.2f')
 plt.title('DHW correlation from 07/12 ~ 17/12/2020', fontsize=15)
 plt.show()
 
-df5=df['2020-12-08 00:00:00' : '2020-12-18 00:00:00']
+df5=dfn['2020-12-08 00:00:00' : '2020-12-18 00:00:00']
 df5h = df5.resample("H").mean()
 df5h = df5h.groupby(df5h.index.time).mean() #Get the mean values of the ten days to get an average on one day
 #print(df5h)
@@ -140,7 +151,7 @@ sn.heatmap(df5h_corr, annot=True, vmax=1, vmin=-1, center=0, cmap='vlag', fmt='.
 plt.title('DHW correlation from 08/12 ~ 18/12/2020', fontsize=15)
 plt.show()
 
-df6=df['2021-06-07 00:00:00' : '2021-06-17 00:00:00']
+df6=dfn['2021-06-07 00:00:00' : '2021-06-17 00:00:00']
 df6h = df6.resample("H").mean()
 df6h = df6h.groupby(df6h.index.time).mean() #Get the mean values of the ten days to get an average on one day
 #print(df5h)
@@ -149,7 +160,7 @@ sn.heatmap(df6h_corr, annot=True, vmax=1, vmin=-1, center=0, cmap='vlag', fmt='.
 plt.title('DHW correlation from 07/06 ~ 17/06/2021', fontsize=15)
 plt.show()
 
-df7=df['2021-06-08 00:00:00' : '2021-06-18 00:00:00']
+df7=dfn['2021-06-08 00:00:00' : '2021-06-18 00:00:00']
 df7h = df7.resample("H").mean()
 df7h = df7h.groupby(df7h.index.time).mean() #Get the mean values of the ten days to get an average on one day
 #print(df7h)
@@ -169,12 +180,17 @@ ac1= df8h.plot(xlabel='Hour', ylabel='DHW [l/h]')
 ac1.set_title('Hourly average value of DHW from 07/12 ~ 17/12/2020')
 plt.show()
 
-df8h_corr = df8h.corr()
+
+df8_bis=dfn['2020-12-07 00:00:00' : '2020-12-17 00:00:00']
+df8h_bis = df8_bis.resample("3H").mean()
+df8h_bis = df8h_bis.groupby(df8h_bis.index.time).mean() #Get the mean values of the ten days to get an average on one day
+#print(df8h_bis)
+df8h_corr = df8h_bis.corr()
 sn.heatmap(df8h_corr, annot=True, vmax=1, vmin=-1, center=0, cmap='vlag', fmt='.2f')
 plt.title('DHW correlation from 07/12 ~ 17/12/2020', fontsize=15)
 plt.show()
 
-df9=df['2020-12-08 00:00:00' : '2020-12-18 00:00:00']
+df9=dfn['2020-12-08 00:00:00' : '2020-12-18 00:00:00']
 df9h = df9.resample("3H").mean()
 df9h = df9h.groupby(df9h.index.time).mean() #Get the mean values of the ten days to get an average on one day
 #print(df9h)
@@ -184,7 +200,7 @@ sn.heatmap(df9h_corr, annot=True, vmax=1, vmin=-1, center=0, cmap='vlag', fmt='.
 plt.title('DHW correlation from 08/12 ~ 18/12/2020', fontsize=15)
 plt.show()
 
-df10=df['2021-06-07 00:00:00' : '2021-06-17 00:00:00']
+df10=dfn['2021-06-07 00:00:00' : '2021-06-17 00:00:00']
 df10h = df10.resample("3H").mean()
 df10h = df10h.groupby(df10h.index.time).mean() #Get the mean values of the ten days to get an average on one day
 #print(df10h)
@@ -194,11 +210,3 @@ sn.heatmap(df10h_corr, annot=True, vmax=1, vmin=-1, center=0, cmap='vlag', fmt='
 plt.title('DHW correlation from 07/06 ~ 17/06/2021', fontsize=15)
 plt.show()
 
-df11=df['2021-06-08 00:00:00' : '2021-06-18 00:00:00']
-df11h = df11.resample("3H").mean()
-df11h = df11h.groupby(df11h.index.time).mean() #Get the mean values of the ten days to get an average on one day
-#print(df11h)
-df11h_corr = df11h.corr()
-sn.heatmap(df11h_corr, annot=True, vmax=1, vmin=-1, center=0, cmap='vlag', fmt='.2f')
-plt.title('DHW correlation from 08/06 ~ 18/06/2021', fontsize=15)
-plt.show()

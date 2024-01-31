@@ -33,10 +33,16 @@ df['mean'] = df.mean(axis=1)
 df=df*3600
 print(df)
 
+#Normalization of the data
+df_mean = df.mean()
+df_std=df.std()
+dfn=(df-df_mean)/df_std #Called dfn because it is the global dataframe will all the data and n for normalization
+#print(dfn)
+
 # Comparing the month of December
 
-df1=df['2020-12-01 00:00:00' : '2020-12-16 00:00:00']
-df2=df['2020-12-16 00:10:00' : '2020-12-30 16:00:00']
+df1=dfn['2020-12-01 00:00:00' : '2020-12-16 00:00:00']
+df2=dfn['2020-12-16 00:10:00' : '2020-12-30 16:00:00']
 print(df1)
 print(df2)
 
@@ -86,8 +92,8 @@ print(df_78_corr)
 # Correlation of the 3 apartments with themselves and of the mean value of the apartment starting with a comparison between December 2020 and January 2021
 
 
-df9=df['2020-12-01 00:00:00' : '2020-12-31 00:00:00']
-df10=df['2021-01-01 00:00:00' : '2021-01-30 13:00:00']
+df9=dfn['2020-12-01 00:00:00' : '2020-12-31 00:00:00']
+df10=dfn['2021-01-01 00:00:00' : '2021-01-30 13:00:00']
 print(df9.shape)
 print(df10.shape)
 
@@ -121,8 +127,8 @@ print(df_1415_corr)
 
 # Comparing two dataframe of three months
 
-df15=df['2020-12-01 00:00:00' : '2021-02-28 00:00:00']
-df16=df['2021-03-01 00:00:00' : '2021-05-28 04:00:00']
+df15=dfn['2020-12-01 00:00:00' : '2021-02-28 00:00:00']
+df16=dfn['2021-03-01 00:00:00' : '2021-05-28 04:00:00']
 print(df15.shape)
 print(df16.shape)
 
